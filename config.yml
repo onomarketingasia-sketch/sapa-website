@@ -1,0 +1,48 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images"
+public_folder: "/images"
+locale: zh_Hant
+collections:
+  - name: "site_content"
+    label: "網站內容"
+    files:
+      - name: "hero"
+        label: "🏠 主頁 Hero"
+        file: "_data/hero.json"
+        fields:
+          - {label: "主標題", name: "heading_zh", widget: "string"}
+          - {label: "副標題", name: "sub_zh", widget: "text"}
+          - {label: "Hero 相片", name: "photo", widget: "image"}
+      - name: "programmes"
+        label: "📚 課程資訊"
+        file: "_data/programmes.json"
+        fields:
+          - label: "課程列表"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "課程名稱", name: "title", widget: "string"}
+              - {label: "課程簡介", name: "desc", widget: "text"}
+              - {label: "課程相片", name: "image", widget: "image"}
+      - name: "gallery"
+        label: "📷 相片集"
+        file: "_data/gallery.json"
+        fields:
+          - label: "相片（最多8張）"
+            name: "photos"
+            widget: "list"
+            max: 8
+            fields:
+              - {label: "相片", name: "image", widget: "image"}
+              - {label: "圖片說明", name: "alt", widget: "string"}
+      - name: "contact"
+        label: "📞 聯絡資料"
+        file: "_data/contact.json"
+        fields:
+          - {label: "地址（中文）", name: "address_zh", widget: "string"}
+          - {label: "地址（英文）", name: "address_en", widget: "string"}
+          - {label: "電話 / WhatsApp", name: "phone", widget: "string"}
+          - {label: "電郵", name: "email", widget: "string"}
+          - {label: "聯絡人", name: "contact_person", widget: "string"}
